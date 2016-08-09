@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import App from './App';
+const VueTouch = require('vue-touch');
+Vue.use(VueTouch);
 
 /* eslint-disable no-new */
 new Vue({
