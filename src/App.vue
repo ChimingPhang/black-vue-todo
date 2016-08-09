@@ -6,11 +6,13 @@
 </template>
 
 <script>
-import Loading from './components/Loading';
-import Main from './components/Main';
+import Loading from './components/Loading'
+import Main from './components/Main'
+
 export default {
   components: {
     Loading,
+    Main
   },
   data() {
     return {
@@ -21,18 +23,26 @@ export default {
 </script>
 
 <style>
+
 html {
   height: 100%;
-  font-size: calc(100vw / 3.75);
+  width:100%;
+  overflow: hidden;
+  font-family: Arial;
 }
 
 body {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   height: 100%;
-  background: #272a35
-}
+  background: #272a35;
+  padding: 16px;
+  margin:0;
 
+}
+#app{
+  width: 100%
+}
 
 </style>
