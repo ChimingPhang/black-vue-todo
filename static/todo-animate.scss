@@ -101,3 +101,37 @@
     transform: scale(1);
   }
 }
+
+.popOutBottom{
+  -moz-animation:popOutBottom .15s ease-in-out forwards;
+  -webkit-animation:popOutBottom .15s ease-in-out forwards;
+  -o-animation:popOutBottom .15s ease-in-out forwards;
+  -ms-animation:popOutBottom .15s ease-in-out forwards;
+  animation:popOutBottom .15s ease-in-out forwards;
+
+  -webkit-transform-origin: center 80px;/* Safari and Chrome */
+  -moz-transform-origin:center 80px; /* Firefox */
+  transform-origin:center 80px; /* Firefox */
+}
+
+@-webkit-keyframes popOutBottom {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@keyframes popOutBottom {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}

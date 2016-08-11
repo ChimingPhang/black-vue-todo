@@ -33,14 +33,27 @@
       showAddBox(){
         this.editing = true
         document.querySelectorAll('.add-task-box')[0].classList.add('popInBottom')
+        document.querySelectorAll('.add-task-box')[0].classList.remove('popOutBottom')
         document.getElementsByName('add-text-field')[0].focus()
       },
       addTask(){
+        let self = this
         let field = document.getElementsByName('add-text-field')[0]
-        this.editing = false
+
+        //animation
+        document.querySelectorAll('.add-task-box')[0].classList.add('popOutBottom')
+        setTimeout(function(){
+          self.editing = false
+        },150)
+        document.querySelectorAll('.add-task-box')[0].classList.remove('popInBottom')
+
+        //add latest
         let new_task = field.value
+        let latestList = window.localStorage.getObject('lastestTask')?window.localStorage.getObject('lastestTask'):[]
         if(new_task!=''){
-          this.$parent.latest.push(new_task)
+          latestList.push(new_task)
+          window.localStorage.setObject('lastestTask',latestList)
+          this.$parent.getTasks()
           field.value = ''
         }
 
@@ -55,8 +68,8 @@
     box-shadow: 0px 2px 8px 0px rgba(2, 3, 3, 0.09);
     position: fixed;
     width: 91%;
-    height: 70px;
-    bottom: 98px;
+    height: 60px;
+    bottom: 110px;
     left: 0;
     right: 0;
     margin: auto;

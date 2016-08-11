@@ -7,7 +7,7 @@
       <List :data="latest"></List>
     </div>
     <div class="tab-content">
-      <List :data="done"></List>
+      <List :data="done" type="done"></List>
     </div>
 
     <add-task></add-task>
@@ -21,20 +21,26 @@ import $ from 'jquery'
 export default {
   data() {
     return {
-        tablist:["Latest","Done"],
-        latest: ['a2', 'b', 'c'],
-        done: ['d', 'e', 'f'],
+        tablist:["LATEST","DONE"],
+        latest: [],
+        done: []
     }
   },
   components: {
     List,
     AddTask
   },
+  ready(){
+    this.getTasks()
+  },
   methods:{
     changeList(index,event){
       $(event.target).addClass('active').siblings('li').removeClass('active')
       $(".tab-content:eq("+index+")").addClass("active").siblings('.tab-content').removeClass('active')
-
+    },
+    getTasks(){
+      this.latest = window.localStorage.getObject('lastestTask')
+      this.done = window.localStorage.getObject('doneTask')
     }
   }
 }
