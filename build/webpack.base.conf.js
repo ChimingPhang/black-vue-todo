@@ -15,7 +15,9 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       $ : "jquery",
-      jQuery : "jquery"
+      jQuery : "jquery",
+      "window.jQuery" : "jquery",
+      "window.$" : "jquery",
     })
   ],
   resolve: {
@@ -24,7 +26,8 @@ module.exports = {
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      'jquery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery.min.js')
     }
   },
   resolveLoader: {

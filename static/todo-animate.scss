@@ -1,0 +1,103 @@
+//滑动删除显示
+@-webkit-keyframes slideLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-50px, 0, 0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-50px, 0, 0);
+  }
+}
+
+.slideLeft {
+  -moz-animation:slideLeft .07s ease forwards;
+  -webkit-animation:slideLeft .07s ease forwards;
+  -o-animation:slideLeft .07s ease forwards;
+  -ms-animation:slideLeft .07s ease forwards;
+  animation:slideLeft .07s ease forwards;
+}
+
+@-webkit-keyframes slideRight {
+  from {
+    -webkit-transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    -webkit-transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideRight {
+  -moz-animation:slideRight .07s ease forwards;
+  -webkit-animation:slideRight .07s ease forwards;
+  -o-animation:slideRight .07s ease forwards;
+  -ms-animation:slideRight .07s ease forwards;
+  animation:slideRight .07s ease forwards;
+}
+
+//滑动删除显示 end
+
+
+//删除上滑消失
+
+
+//新建弹出
+.popInBottom{
+  -moz-animation:popInBottom .15s ease-in-out forwards;
+  -webkit-animation:popInBottom .15s ease-in-out forwards;
+  -o-animation:popInBottom .15s ease-in-out forwards;
+  -ms-animation:popInBottom .15s ease-in-out forwards;
+  animation:popInBottom .15s ease-in-out forwards;
+
+  -webkit-transform-origin: center 80px;/* Safari and Chrome */
+  -moz-transform-origin:center 80px; /* Firefox */
+  transform-origin:center 80px; /* Firefox */
+}
+
+@-webkit-keyframes popInBottom {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes popInBottom {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

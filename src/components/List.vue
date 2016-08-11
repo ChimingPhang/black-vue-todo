@@ -1,7 +1,7 @@
 <template>
   <ul class="task-list">
     <li v-for="item in data">
-      <div class="task-item">
+      <div class="task-item" v-touch:swipe="onSwipe($event)">
         <span class="checkbox" @click="checkDone($event)"></span>
         <label>{{item}}</label>
       </div>
@@ -12,19 +12,34 @@
   </ul>
 </template>
 <script>
+import $ from 'jquery'
 export default {
   props: ['data'],
   data() {
     return {};
   },
   methods:{
-    checkDone(){
-      $(event.target).addClass('active')
+    checkDone(event){
+      event.target.classList.add('active')
+
+    },
+    onSwipe(event){
+      let x = event.direction
+      if(x == 2){
+        event.target.classList.add('slideLeft')
+        event.target.classList.remove('slideRight')
+      }else{
+        event.target.classList.add('slideRight')
+        event.target.classList.remove('slideLeft')
+      }
+
     }
   }
 };
 </script>
 <style lang="scss">
+@import '../../static/todo-animate.scss';
+
 .task-list {
   padding-left: 0;
   margin: 0;
@@ -32,6 +47,8 @@ export default {
     list-style: none;
     position: relative;
     margin-bottom:10px;
+    transition:all .3s ease-in-out;
+    -webkit-transition:all .3s ease-in-out;
   }
   input {
     outline: none
@@ -52,17 +69,23 @@ export default {
     margin-top:-3px;
     border-style: solid;
     border-width: 1px;
-    border-color: rgb(230, 230, 230);
+    border-color: rgb(240, 240, 240);
     border-radius: 3px;
     background-color: rgb(255, 255, 255);
-    box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+    //box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.11);
     width: 18px;
     height: 18px;
-
+    position:relative;
     &.active{
-      :after{
-        content:'';
-        font-family:fontAwesome;
+      &:after{
+        content: '\F00C';
+        color: #0db60d;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 14px;
+        position:absolute;
+        top:2px;
+        left:2px;
       }
     }
   }

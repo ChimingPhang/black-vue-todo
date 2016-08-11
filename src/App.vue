@@ -8,6 +8,7 @@
 <script>
 import Loading from './components/Loading'
 import Main from './components/Main'
+import $ from 'jquery'
 
 export default {
   components: {
@@ -22,7 +23,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '../node_modules/font-awesome/scss/font-awesome.scss';
 
 html {
   height: 100%;

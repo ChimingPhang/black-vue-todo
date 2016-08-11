@@ -9,12 +9,14 @@
     <div class="tab-content">
       <List :data="done"></List>
     </div>
+
+    <add-task></add-task>
   </div>
 
 </template>
 <script>
-import Swiper from 'swiper'
 import List from './List'
+import AddTask from './AddTask'
 import $ from 'jquery'
 export default {
   data() {
@@ -25,7 +27,8 @@ export default {
     }
   },
   components: {
-    List
+    List,
+    AddTask
   },
   methods:{
     changeList(index,event){
