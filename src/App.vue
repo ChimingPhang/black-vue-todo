@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <Loading :show="loading"></Loading>
-    <Main v-show="!loading"></Main>
+    <div class="main">
+      <Main v-show="!loading"></Main>
+    </div>
+
   </div>
 </template>
 
@@ -15,9 +18,15 @@ export default {
     Loading,
     Main
   },
+  ready(){
+    let self = this
+    setTimeout(function(){
+      self.loading = false
+    },4000)
+  },
   data() {
     return {
-      loading: false,
+      loading: true,
     };
   },
 };
@@ -35,16 +44,19 @@ html {
 
 body {
   display: flex;
-  align-items: top;
+  align-items: center;
   justify-content: center;
   height: 100%;
   background: #272a35;
   padding: 16px;
   margin:0;
-
+  .main{
+    align-items: top;
+  }
 }
 #app{
-  width: 100%
+  width: 100%;
+  height:100%;
 }
 
 </style>

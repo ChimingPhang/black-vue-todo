@@ -1,6 +1,6 @@
 # black-vue-todo
 
-> A Vue.js project
+> A Vue.js TODO project , psd designed by myself
 
 ## Build Setup
 
@@ -25,3 +25,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Preview
+![preview.png](https://raw.githubusercontent.com/ChimingPhang/black-vue-todo/master/preview.png)
+
