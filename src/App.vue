@@ -50,6 +50,7 @@ body {
   background: #272a35;
   padding: 16px;
   margin:0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   .main{
     align-items: top;
   }
