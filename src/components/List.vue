@@ -138,7 +138,7 @@ export default {
   font-size: 18px;
   box-shadow: 0px 2px 8px 0px rgba(2, 3, 3, 0.004);
   position: relative;
-  z-index:22;
+  z-index:2;
   .checkbox {
     display: inline-block;
     vertical-align: middle;

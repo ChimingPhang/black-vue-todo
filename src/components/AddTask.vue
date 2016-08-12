@@ -76,6 +76,7 @@
     border-radius: 4px;
     text-align:center;
     justify-content: center;
+    z-index:99;
     input{
       position: absolute;
       top: 0;

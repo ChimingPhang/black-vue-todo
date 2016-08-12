@@ -39,8 +39,8 @@ export default {
       $(".tab-content:eq("+index+")").addClass("active").siblings('.tab-content').removeClass('active')
     },
     getTasks(){
-      this.latest = window.localStorage.getObject('lastestTask')
-      this.done = window.localStorage.getObject('doneTask')
+      this.latest = window.localStorage.getObject('lastestTask').reverse()
+      this.done = window.localStorage.getObject('doneTask').reverse()
     }
   }
 }
