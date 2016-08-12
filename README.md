@@ -1,4 +1,4 @@
-# black-vue-todo
+# black-vue-todo v1.0.0
 
 > A Vue.js TODO project , psd designed by myself
 
